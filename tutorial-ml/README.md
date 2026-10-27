@@ -12,7 +12,7 @@ MiniLAr downloads about 151 MiB on first use and creates a reusable cache in `da
 
 ## Suggested 90-minute route
 
-The session alternates instructor-led fill-ins with an independent challenge. **01 and 02 intentionally do not run unchanged:** each has six numbered `missing(...)` stops in the main execution path. Students call out the missing expression or line, the instructor fills it in, and everyone reruns that cell. Allow 15–45 seconds per stop; this is not a series of open-ended coding exercises. Other prompts are brief discussion points.
+The session alternates instructor-led fill-ins with an independent challenge. **01 and 02 intentionally do not run unchanged:** each has six numbered `missing(...)` stops in the main execution path. Students call out the missing expression or line, the instructor fills it in, and everyone reruns that cell. Allow 15–45 seconds per stop; this is not a series of open-ended coding exercises. Other prompts are brief discussion points. All API names are supplied before a gap. Students infer dimensions, array axes, prediction/target roles, booleans, or operation order from the preceding explanation; they do not need to recall PyTorch vocabulary.
 
 | Time | Notebook | Core activity | Lecture connection |
 | --- | --- | --- | --- |
@@ -26,7 +26,7 @@ The session alternates instructor-led fill-ins with an independent challenge. **
 
 In 02, `USE_PRETRAINED=True` is the live default: run a 20-step demonstration, then load the supplied MLP and its matching reference log. Those final metrics describe the supplied weights, not the demonstration. Use `False` for a full 10,000-step run after the session.
 
-In 03, students must complete four tasks, each with hints and executable checks. The supplied training loop runs their optimizer step for up to 200 batches, checking a 60-second budget between batches. Runtime still depends on the Hub; a slow batch cannot be interrupted by that check. The core result is **their** short-trained CNN. After completing the update check and training run, they may set `USE_REFERENCE_WEIGHTS=True` to inspect the long-trained CNN; they still implement the predictions and confusion matrix. No cached CNN predictions bypass those tasks.
+In 03, students complete four tasks with syntax references and executable checks: connect layer dimensions, assemble a training step from a supplied line bank, choose inference inputs/axes, and normalize a confusion matrix. The challenge is to apply the earlier concepts, not to discover new library calls. The supplied training loop runs their optimizer step for up to 200 batches, checking a 60-second budget between batches. Runtime still depends on the Hub; a slow batch cannot be interrupted by that check. The core result is **their** short-trained CNN. After completing the update check and training run, they may set `USE_REFERENCE_WEIGHTS=True` to inspect the long-trained CNN; they still implement the predictions and confusion matrix. No cached CNN predictions bypass those tasks.
 
 **Handoff at minute 50:** “Keep 02 open as a reference and start 03 with a fresh kernel. Build a CNN that passes the shape check, train it, calculate its accuracy and confusion matrix, and tell us one important mistake. Work with a neighbor; ask for a hint after two minutes stuck. High accuracy is not the completion criterion.”
 

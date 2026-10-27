@@ -53,3 +53,9 @@ Use fresh inference when evaluating your own weights. Optional cached prediction
 Completed copies of 01–03 are kept locally in `solution/`, with a quick answer key and worked optional exercises. The directory is ignored by Git so a normal add/commit will not publish it before the session. Ignore rules are not access control: do not upload or copy that directory to the student Hub or include it in a workshop ZIP before release.
 
 After the session, remove `/solution/` from `tutorial-ml/.gitignore` and add the solution directory in your normal release commit. The solution notebooks resolve the parent directory for shared data/weights and can be opened directly from `tutorial-ml/solution/`.
+
+## Similar-size model comparison
+
+The default MLP now has **32 hidden neurons and 25,285 parameters**, versus **23,621 parameters** for the CNN. Both reference models use 10,000 optimizer steps, batches of 64, and Adam with learning rate 0.001 on the same split.
+
+The updated bundled MLP reaches **64.84%** accuracy on the 9,992 held-out images; the supplied CNN reaches **75.62%**. The CNN has about 7% fewer parameters and scores 10.78 percentage points higher in this comparison. These are single-run reference results, not a guarantee across seeds. The MLP was retrained on CPU with PyTorch 2.8.0 and seed 12345. The checkpoint, log, and cached predictions all correspond to this 32-neuron model.

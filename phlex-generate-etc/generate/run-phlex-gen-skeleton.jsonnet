@@ -8,7 +8,7 @@
   sources: {
     // Python generator: provides a particle table (creator 'pygen', suffix 'particles')
     pygen: {
-      py: 'my_tutorial_generator',
+      py: 'phlex-gen-skeleton',
       layer: 'event',
       # You may add configuration here if you implement that within your generator
     },
